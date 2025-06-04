@@ -1,0 +1,27 @@
+{
+  "name": "plombrennes-website",
+  "version": "1.0.0",
+  "description": "Professional French plumber website for Rennes with modern design",
+  "main": "index.js",
+  "scripts": {
+    "dev": "live-server --port=3001 --open=/src",
+    "build": "node scripts/build.js",
+    "start": "npm run build && live-server --port=3001 --open=/dist",
+    "deploy": "npm run build && gh-pages -d dist"
+  },
+  "keywords": [
+    "plombier",
+    "rennes",
+    "website",
+    "tailwind",
+    "french",
+    "responsive"
+  ],
+  "author": "PlombRennes",
+  "license": "MIT",
+  "devDependencies": {
+    "fs-extra": "^11.2.0",
+    "gh-pages": "^6.1.0",
+    "live-server": "^1.2.0"
+  }
+}
