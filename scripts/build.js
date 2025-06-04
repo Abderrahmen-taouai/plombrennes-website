@@ -20,7 +20,7 @@ async function build() {
         const robotsTxt = `User-agent: *
 Allow: /
 
-Sitemap: https://yourusername.github.io/plombrennes-website/sitemap.xml`;
+Sitemap: https://abderrahmen-taouai.github.io/plombrennes-website/sitemap.xml`;
         
         await fs.writeFile('dist/robots.txt', robotsTxt);
         console.log('✅ robots.txt created');
@@ -29,7 +29,7 @@ Sitemap: https://yourusername.github.io/plombrennes-website/sitemap.xml`;
         const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://yourusername.github.io/plombrennes-website/</loc>
+        <loc>https://abderrahmen-taouai.github.io/plombrennes-website/</loc>
         <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>

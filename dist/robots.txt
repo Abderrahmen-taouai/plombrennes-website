@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://yourusername.github.io/plombrennes-website/sitemap.xml
+Sitemap: https://abderrahmen-taouai.github.io/plombrennes-website/sitemap.xml
