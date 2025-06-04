@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlombRennes - Plombier Expert à Rennes et Ille-et-Vilaine</title>
+    <meta name="description" content="Plombier professionnel à Rennes. Intervention rapide, service d'urgence 24h/24 en Ille-et-Vilaine.">
+    <meta name="keywords" content="plombier, rennes, ille-et-vilaine, réparation, installation, urgence, bretagne">
+    <meta name="author" content="PlombRennes">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://plombrennes.fr/">
+    <meta property="og:title" content="PlombRennes - Plombier Expert à Rennes">
+    <meta property="og:description" content="Plombier professionnel à Rennes. Intervention rapide 24/7 en Ille-et-Vilaine.">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://plombrennes.fr/">
+    <meta property="twitter:title" content="PlombRennes - Plombier Expert à Rennes">
+    <meta property="twitter:description" content="Plombier professionnel à Rennes. Intervention rapide 24/7 en Ille-et-Vilaine.">
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'rennes-orange': '#ff6b35',
+                        'rennes-red': '#d63031',
+                        'rennes-dark': '#2d3436',
+                        'rennes-gray': '#636e72',
+                        'rennes-light': '#ddd',
+                    },
+                    fontFamily: {
+                        'sans': ['Poppins', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #ff6b35 0%, #d63031 100%);
+        }
+        
+        .hero-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .card {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            border-left-color: #ff6b35;
+        }
+        
+        .btn-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .btn-hover:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+        }
+        
+        .section-divider {
+            background: linear-gradient(90deg, transparent, #ff6b35, transparent);
+            height: 2px;
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Loading animation */
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+        
+        .slide-in-left {
+            animation: slideInLeft 0.8s ease-out;
+        }
+        
+        .slide-in-right {
+            animation: slideInRight 0.8s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #ff6b35;
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d63031;
+        }
+    </style>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Top Header Bar -->
+    <div class="bg-rennes-dark text-white py-3 px-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center text-sm">
+            <div class="flex items-center space-x-6">
+                <div class="flex items-center">
+                    <i class="fas fa-map-marker-alt mr-2 text-rennes-orange"></i>
+                    <span class="hidden sm:inline">15 Avenue Jean Janvier, 35000 Rennes</span>
+                    <span class="sm:hidden">Rennes, Bretagne</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-phone mr-2 text-rennes-orange"></i>
+                    <span>+33 2 99 12 34 56</span>
+                </div>
+                <div class="hidden lg:flex items-center">
+                    <i class="fas fa-clock mr-2 text-rennes-orange"></i>
+                    <span>Service 24h/24 - 7j/7</span>
+                </div>
+            </div>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="#" class="hover:text-rennes-orange transition-colors" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="hover:text-rennes-orange transition-colors" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="hover:text-rennes-orange transition-colors" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#" class="hover:text-rennes-orange transition-colors" aria-label="Google">
+                    <i class="fab fa-google"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="bg-white shadow-xl relative z-50 sticky top-0 border-b-4 border-rennes-orange">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <div class="w-12 h-12 bg-rennes-orange rounded-full flex items-center justify-center mr-3">
+                        <i class="fas fa-wrench text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-rennes-dark">PlombRennes</h1>
+                        <p class="text-xs text-rennes-gray">Expert en Plomberie</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex space-x-8" role="navigation">
+                    <a href="#accueil" class="text-rennes-gray hover:text-rennes-orange px-3 py-2 text-sm font-semibold transition-colors border-b-2 border-transparent hover:border-rennes-orange">Accueil</a>
+                    <a href="#services" class="text-rennes-gray hover:text-rennes-orange px-3 py-2 text-sm font-semibold transition-colors border-b-2 border-transparent hover:border-rennes-orange">Services</a>
+                    <a href="#expertise" class="text-rennes-gray hover:text-rennes-orange px-3 py-2 text-sm font-semibold transition-colors border-b-2 border-transparent hover:border-rennes-orange">Expertise</a>
+                    <a href="#zones" class="text-rennes-gray hover:text-rennes-orange px-3 py-2 text-sm font-semibold transition-colors border-b-2 border-transparent hover:border-rennes-orange">Zones</a>
+                    <a href="#contact" class="text-rennes-gray hover:text-rennes-orange px-3 py-2 text-sm font-semibold transition-colors border-b-2 border-transparent hover:border-rennes-orange">Contact</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden lg:flex items-center">
+                    <button class="bg-rennes-orange hover:bg-rennes-red text-white px-8 py-3 rounded-full font-semibold btn-hover" onclick="callNow()">
+                        <i class="fas fa-phone mr-2"></i>
+                        Appeler Maintenant
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="lg:hidden">
+                    <button id="mobile-menu-button" class="text-rennes-gray hover:text-rennes-orange focus:outline-none" aria-label="Menu mobile">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-gray-200">
+            <div class="px-4 pt-2 pb-3 space-y-1">
+                <a href="#accueil" class="block px-3 py-3 text-base font-medium text-rennes-gray hover:text-rennes-orange border-l-4 border-transparent hover:border-rennes-orange">Accueil</a>
+                <a href="#services" class="block px-3 py-3 text-base font-medium text-rennes-gray hover:text-rennes-orange border-l-4 border-transparent hover:border-rennes-orange">Services</a>
+                <a href="#expertise" class="block px-3 py-3 text-base font-medium text-rennes-gray hover:text-rennes-orange border-l-4 border-transparent hover:border-rennes-orange">Expertise</a>
+                <a href="#zones" class="block px-3 py-3 text-base font-medium text-rennes-gray hover:text-rennes-orange border-l-4 border-transparent hover:border-rennes-orange">Zones</a>
+                <a href="#contact" class="block px-3 py-3 text-base font-medium text-rennes-gray hover:text-rennes-orange border-l-4 border-transparent hover:border-rennes-orange">Contact</a>
+                <div class="pt-4 pb-2">
+                    <button class="w-full bg-rennes-orange hover:bg-rennes-red text-white px-4 py-3 rounded-lg font-semibold transition-all" onclick="callNow()">
+                        <i class="fas fa-phone mr-2"></i>Appeler Maintenant
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="relative overflow-hidden">
+        <div class="hero-gradient hero-pattern min-h-screen flex items-center bg-orange-600">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <!-- Content -->
+                    <div class="text-white slide-in-left">
+                        <div class="inline-flex items-center bg-white bg-opacity-20 rounded-full px-4 py-2 mb-6">
+                            <i class="fas fa-map-marker-alt text-rennes-orange mr-2"></i>
+                            <span class="text-sm font-semibold">Rennes & Ille-et-Vilaine</span>
+                        </div>
+                        <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6">
+                            Votre Plombier Expert à <span class="text-yellow-300">Rennes</span>
+                        </h1>
+                        <p class="text-xl lg:text-2xl mb-8 text-orange-100 leading-relaxed">
+                            Intervention rapide 24h/24 en Ille-et-Vilaine. Plus de 12 ans d'expérience au service des Rennais.
+                        </p>
+                        
+                        <!-- Stats -->
+                        <div class="grid grid-cols-3 gap-4 mb-8">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-yellow-300">24h/24</div>
+                                <div class="text-sm text-orange-200">Service d'urgence</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-yellow-300">12+</div>
+                                <div class="text-sm text-orange-200">Années d'expérience</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-yellow-300">500+</div>
+                                <div class="text-sm text-orange-200">Clients satisfaits</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button class="bg-white text-rennes-orange px-8 py-4 rounded-full font-bold btn-hover flex items-center justify-center" onclick="callNow()">
+                                <i class="fas fa-phone mr-2"></i>
+                                02 99 12 34 56
+                            </button>
+                            <button class="bg-yellow-400 hover:bg-yellow-300 text-rennes-dark px-8 py-4 rounded-full font-bold transition-all" onclick="callNow()">
+                                <i class="fas fa-clock mr-2"></i>
+                                Service 24h/24
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Image -->
+                    <div class="hidden lg:block slide-in-right">
+                        <div class="relative">
+                            <img 
+                                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                alt="Plombier professionnel à Rennes"
+                                class="rounded-3xl shadow-2xl transform hover:scale-105 transition-transform duration-300"
+                                loading="lazy"
+                            />
+                            <!-- Floating badge -->
+                            <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl p-4 shadow-xl">
+                                <div class="flex items-center">
+                                    <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mr-3">
+                                        <i class="fas fa-check text-white text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-rennes-dark">Certifié</div>
+                                        <div class="text-sm text-rennes-gray">Qualibat RGE</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center bg-rennes-orange bg-opacity-10 rounded-full px-6 py-2 mb-4">
+                    <i class="fas fa-tools text-rennes-orange mr-2"></i>
+                    <span class="text-sm font-semibold text-rennes-orange uppercase tracking-wider">Nos Services</span>
+                </div>
+                <h2 class="text-3xl lg:text-4xl font-bold text-rennes-dark mb-6">
+                    Expertise Complète en Plomberie
+                </h2>
+                <div class="section-divider w-24 mx-auto mb-6"></div>
+                <p class="text-xl text-rennes-gray max-w-3xl mx-auto">
+                    De l'urgence à la rénovation complète, nous intervenons rapidement sur Rennes et toute l'Ille-et-Vilaine avec du matériel professionnel.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-exclamation-triangle text-rennes-red text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rennes-dark mb-4">Dépannage Urgence</h3>
+                    <p class="text-rennes-gray mb-6">
+                        Intervention d'urgence 24h/24 et 7j/7 sur Rennes métropole. Fuite, canalisation bouchée, panne de chauffe-eau.
+                    </p>
+                    <div class="flex items-center text-rennes-orange font-semibold">
+                        <span>Intervention sous 30min</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </div>
+                </div>
+
+                <div class="card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-bath text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rennes-dark mb-4">Salle de Bain</h3>
+                    <p class="text-rennes-gray mb-6">
+                        Création et rénovation complète de salles de bain. Design moderne, installation sanitaire haut de gamme.
+                    </p>
+                    <div class="flex items-center text-rennes-orange font-semibold">
+                        <span>Consultation gratuite</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </div>
+                </div>
+
+                <div class="card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-fire text-rennes-orange text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rennes-dark mb-4">Chauffage & Gaz</h3>
+                    <p class="text-rennes-gray mb-6">
+                        Installation et maintenance de systèmes de chauffage. Chaudière gaz, pompe à chaleur, radiateurs.
+                    </p>
+                    <div class="flex items-center text-rennes-orange font-semibold">
+                        <span>Technicien agréé gaz</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </div>
+                </div>
+
+                <div class="card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-tint text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rennes-dark mb-4">Canalisation</h3>
+                    <p class="text-rennes-gray mb-6">
+                        Débouchage, détection de fuite, réparation et remplacement de canalisations. Caméra d'inspection.
+                    </p>
+                    <div class="flex items-center text-rennes-orange font-semibold">
+                        <span>Diagnostic précis</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </div>
+                </div>
+
+                <div class="card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-thermometer-half text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rennes-dark mb-4">Chauffe-eau</h3>
+                    <p class="text-rennes-gray mb-6">
+                        Installation, réparation et entretien de chauffe-eau électrique, gaz et thermodynamique.
+                    </p>
+                    <div class="flex items-center text-rennes-orange font-semibold">
+                        <span>Garantie 2 ans</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </div>
+                </div>
+
+                <div class="card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-home text-yellow-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-rennes-dark mb-4">Rénovation</h3>
+                    <p class="text-rennes-gray mb-6">
+                        Rénovation complète de plomberie. Mise aux normes, modernisation, amélioration énergétique.
+                    </p>
+                    <div class="flex items-center text-rennes-orange font-semibold">
+                        <span>Projet clé en main</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Left Content -->
+                <div class="slide-in-left">
+                    <div class="inline-flex items-center bg-rennes-orange bg-opacity-10 rounded-full px-6 py-2 mb-6">
+                        <i class="fas fa-award text-rennes-orange mr-2"></i>
+                        <span class="text-sm font-semibold text-rennes-orange uppercase tracking-wider">Notre Expertise</span>
+                    </div>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-rennes-dark mb-6">
+                        12 Ans d'Excellence à Rennes
+                    </h2>
+                    <p class="text-lg text-rennes-gray mb-8">
+                        Spécialiste reconnu en plomberie sur Rennes et l'Ille-et-Vilaine, nous accompagnons particuliers et professionnels avec un savoir-faire artisanal et des techniques modernes.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-8 h-8 bg-rennes-orange rounded-full flex items-center justify-center mt-1">
+                                <i class="fas fa-check text-white text-sm"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-bold text-rennes-dark mb-2">Artisan Qualifié RGE</h4>
+                                <p class="text-rennes-gray">Certification Qualibat et RGE pour vos travaux éligibles aux aides de l'État.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-8 h-8 bg-rennes-orange rounded-full flex items-center justify-center mt-1">
+                                <i class="fas fa-check text-white text-sm"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-bold text-rennes-dark mb-2">Équipement Professionnel</h4>
+                                <p class="text-rennes-gray">Matériel de pointe : caméra d'inspection, détecteur de fuite, outillage spécialisé.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-8 h-8 bg-rennes-orange rounded-full flex items-center justify-center mt-1">
+                                <i class="fas fa-check text-white text-sm"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-bold text-rennes-dark mb-2">Garantie Décennale</h4>
+                                <p class="text-rennes-gray">Tous nos travaux sont couverts par une assurance décennale pour votre tranquillité.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                        <button class="bg-rennes-orange hover:bg-rennes-red text-white px-6 py-3 rounded-full font-semibold btn-hover" onclick="callNow()">
+                            <i class="fas fa-phone mr-2"></i>
+                            Nous Contacter
+                        </button>
+                        <button class="border-2 border-rennes-orange text-rennes-orange hover:bg-rennes-orange hover:text-white px-6 py-3 rounded-full font-semibold transition-all" onclick="scrollToSection('zones')">
+                            <i class="fas fa-map mr-2"></i>
+                            Voir nos Zones
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Content - Image & Stats -->
+                <div class="slide-in-right">
+                    <div class="relative">
+                        <img 
+                            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                            alt="Équipe PlombRennes au travail"
+                            class="rounded-3xl shadow-2xl"
+                            loading="lazy"
+                        />
+                        
+                        <!-- Stats Cards -->
+                        <div class="absolute -bottom-8 -left-8 bg-white rounded-2xl p-6 shadow-xl">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-rennes-orange">500+</div>
+                                <div class="text-sm text-rennes-gray">Interventions/an</div>
+                            </div>
+                        </div>
+                        
+                        <div class="absolute -top-8 -right-8 bg-rennes-orange rounded-2xl p-6 shadow-xl text-white">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold">4.9/5</div>
+                                <div class="text-sm opacity-90">Avis clients</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zones Section -->
+    <section id="zones" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center bg-rennes-orange bg-opacity-10 rounded-full px-6 py-2 mb-4">
+                    <i class="fas fa-map-marked-alt text-rennes-orange mr-2"></i>
+                    <span class="text-sm font-semibold text-rennes-orange uppercase tracking-wider">Zones d'Intervention</span>
+                </div>
+                <h2 class="text-3xl lg:text-4xl font-bold text-rennes-dark mb-6">
+                    Nous Intervenons dans Toute l'Ille-et-Vilaine
+                </h2>
+                <div class="section-divider w-24 mx-auto mb-6"></div>
+                <p class="text-xl text-rennes-gray max-w-3xl mx-auto">
+                    Service de proximité sur Rennes Métropole et communes limitrophes. Déplacement rapide garanti.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-gradient-to-br from-rennes-orange to-rennes-red text-white p-6 rounded-2xl">
+                    <i class="fas fa-city text-3xl mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Rennes Centre</h3>
+                    <p class="text-sm opacity-90">Intervention sous 30min en centre-ville</p>
+                </div>
+                
+                <div class="bg-gray-100 p-6 rounded-2xl hover:bg-gray-200 transition-colors">
+                    <i class="fas fa-home text-rennes-orange text-3xl mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2 text-rennes-dark">Rennes Métropole</h3>
+                    <p class="text-sm text-rennes-gray">Cesson-Sévigné, Betton, Saint-Grégoire, Chantepie...</p>
+                </div>
+                
+                <div class="bg-gray-100 p-6 rounded-2xl hover:bg-gray-200 transition-colors">
+                    <i class="fas fa-tree text-rennes-orange text-3xl mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2 text-rennes-dark">Communes Proches</h3>
+                    <p class="text-sm text-rennes-gray">Fougères, Vitré, Redon, Montfort-sur-Meu...</p>
+                </div>
+                
+                <div class="bg-gray-100 p-6 rounded-2xl hover:bg-gray-200 transition-colors">
+                    <i class="fas fa-map text-rennes-orange text-3xl mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2 text-rennes-dark">Ille-et-Vilaine</h3>
+                    <p class="text-sm text-rennes-gray">Intervention sur demande dans tout le département</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-rennes-orange bg-opacity-10 rounded-2xl p-8 text-center">
+                <h3 class="text-2xl font-bold text-rennes-dark mb-4">Votre commune n'est pas listée ?</h3>
+                <p class="text-rennes-gray mb-6">Contactez-nous ! Nous étudions toute demande d'intervention en Ille-et-Vilaine.</p>
+                <button class="bg-rennes-orange hover:bg-rennes-red text-white px-8 py-3 rounded-full font-semibold btn-hover" onclick="callNow()">
+                    <i class="fas fa-phone mr-2"></i>
+                    Nous Appeler
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center bg-rennes-orange bg-opacity-10 rounded-full px-6 py-2 mb-4">
+                    <i class="fas fa-star text-rennes-orange mr-2"></i>
+                    <span class="text-sm font-semibold text-rennes-orange uppercase tracking-wider">Témoignages</span>
+                </div>
+                <h2 class="text-3xl lg:text-4xl font-bold text-rennes-dark mb-6">
+                    Ils Nous Font Confiance
+                </h2>
+                <div class="section-divider w-24 mx-auto mb-6"></div>
+                <p class="text-xl text-rennes-gray max-w-3xl mx-auto">
+                    Plus de 500 clients satisfaits à Rennes et en Ille-et-Vilaine. Découvrez leurs avis.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400 mr-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-sm text-rennes-gray">Google Reviews</span>
+                    </div>
+                    <p class="text-rennes-gray mb-6 italic">
+                        "Intervention très rapide pour une fuite d'urgence un dimanche soir. Plombier compétent et tarif honnête. Je recommande PlombRennes !"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-rennes-orange rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold">CL</span>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-rennes-dark">Claire Leblanc</h4>
+                            <p class="text-rennes-gray text-sm">Rennes - Quartier Sainte-Thérèse</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400 mr-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-sm text-rennes-gray">Pages Jaunes</span>
+                    </div>
+                    <p class="text-rennes-gray mb-6 italic">
+                        "Rénovation complète de notre salle de bain. Travail soigné, respect des délais et excellent conseil. Artisan de confiance !"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-rennes-orange rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold">PM</span>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-rennes-dark">Pierre Martin</h4>
+                            <p class="text-rennes-gray text-sm">Cesson-Sévigné</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400 mr-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-sm text-rennes-gray">Facebook</span>
+                    </div>
+                    <p class="text-rennes-gray mb-6 italic">
+                        "Installation de notre nouvelle chaudière gaz. Service professionnel et prix compétitif. Merci à l'équipe !"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-rennes-orange rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold">AD</span>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-rennes-dark">Anne Dubois</h4>
+                            <p class="text-rennes-gray text-sm">Saint-Grégoire</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 hero-gradient hero-pattern bg-orange-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6">
+                    Une Urgence ? Besoin d'un Plombier ?
+                </h2>
+                <p class="text-xl text-orange-100 mb-8">
+                    Notre équipe est disponible 24h/24 pour vos urgences de plomberie à Rennes et en Ille-et-Vilaine.
+                </p>
+                
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-white bg-opacity-20 rounded-2xl p-6">
+                        <i class="fas fa-clock text-yellow-300 text-3xl mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Urgence 24h/24</h3>
+                        <p class="text-orange-100 mb-4">Intervention rapide sur Rennes métropole</p>
+                        <button class="bg-white text-rennes-orange px-6 py-3 rounded-full font-bold btn-hover w-full" onclick="callNow()">
+                            <i class="fas fa-phone mr-2"></i>
+                            02 99 12 34 56
+                        </button>
+                    </div>
+                    
+                    <div class="bg-white bg-opacity-20 rounded-2xl p-6">
+                        <i class="fas fa-tools text-yellow-300 text-3xl mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Service Professionnel</h3>
+                        <p class="text-orange-100 mb-4">Artisan qualifié et équipé</p>
+                        <button class="bg-yellow-400 hover:bg-yellow-300 text-rennes-dark px-6 py-3 rounded-full font-bold transition-all w-full" onclick="callNow()">
+                            <i class="fas fa-wrench mr-2"></i>
+                            Nous Contacter
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap justify-center gap-4 text-sm text-orange-200">
+                    <div class="flex items-center">
+                        <i class="fas fa-shield-alt mr-2"></i>
+                        <span>Assurance décennale</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-award mr-2"></i>
+                        <span>Artisan RGE</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-tools mr-2"></i>
+                        <span>Matériel professionnel</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-rennes-dark text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-rennes-orange rounded-full flex items-center justify-center mr-3">
+                            <i class="fas fa-wrench text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">PlombRennes</h3>
+                            <p class="text-sm text-gray-400">Expert en Plomberie</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6">
+                        Votre plombier de confiance à Rennes depuis plus de 12 ans. Service professionnel et intervention rapide en Ille-et-Vilaine.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-rennes-orange transition-colors" aria-label="Facebook">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-rennes-orange transition-colors" aria-label="Instagram">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-rennes-orange transition-colors" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-rennes-orange transition-colors" aria-label="Google">
+                            <i class="fab fa-google text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-6 text-rennes-orange">Services</h4>
+                    <ul class="space-y-3 text-gray-300">
+                        <li><a href="#" class="hover:text-rennes-orange transition-colors">Dépannage Urgence</a></li>
+                        <li><a href="#" class="hover:text-rennes-orange transition-colors">Salle de Bain</a></li>
+                        <li><a href="#" class="hover:text-rennes-orange transition-colors">Chauffage & Gaz</a></li>
+                        <li><a href="#" class="hover:text-rennes-orange transition-colors">Canalisation</a></li>
+                        <li><a href="#" class="hover:text-rennes-orange transition-colors">Chauffe-eau</a></li>
+                        <li><a href="#" class="hover:text-rennes-orange transition-colors">Rénovation</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-6 text-rennes-orange">Zones d'Intervention</h4>
+                    <ul class="space-y-3 text-gray-300">
+                        <li><a href="#" class="hover:text-rennes-orange transition-colors">Rennes Centre</a></li>
+                        <li><a href="#" class="hover:text-rennes-orange transition-colors">Rennes Métropole</a></li>
+                        <li><a href="#" class="hover:text-rennes-orange transition-colors">Cesson-Sévigné</a></li>
+                        <li><a href="#" class="hover:text-rennes-orange transition-colors">Saint-Grégoire</a></li>
+                        <li><a href="#" class="hover:text-rennes-orange transition-colors">Betton</a></li>
+                        <li><a href="#" class="hover:text-rennes-orange transition-colors">Toute l'Ille-et-Vilaine</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-6 text-rennes-orange">Contact</h4>
+                    <div class="space-y-4 text-gray-300">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-rennes-orange mr-3 mt-1"></i>
+                            <span>15 Avenue Jean Janvier<br>35000 Rennes, France</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-rennes-orange mr-3"></i>
+                            <span>+33 2 99 12 34 56</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-rennes-orange mr-3"></i>
+                            <span>contact@plombrennes.fr</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-clock text-rennes-orange mr-3"></i>
+                            <span>24h/24 - 7j/7</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-certificate text-rennes-orange mr-3"></i>
+                            <span>SIRET: 987 654 321 00012</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-12 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm">
+                        &copy; 2024 PlombRennes. Tous droits réservés. | Développé avec ❤️ en Bretagne
+                    </p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="text-gray-400 hover:text-rennes-orange text-sm transition-colors">Mentions Légales</a>
+                        <a href="#" class="text-gray-400 hover:text-rennes-orange text-sm transition-colors">CGV</a>
+                        <a href="#" class="text-gray-400 hover:text-rennes-orange text-sm transition-colors">Confidentialité</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>
